@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class ToggleCredits : MonoBehaviour
 {
+    public GameObject UI_credits;
     public void Toggle()
     {
-        if (UI_credits.SetActive(false))
-        {
-            UI_credits.SetActive(true);
-        }else
-        {
-            UI_credits.SetActive(false);
-        }
+        UI_credits.SetActive(!UI_credits.activeSelf);
+        
     }
 }
