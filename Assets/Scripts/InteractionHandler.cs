@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InteractionHandler : MonoBehaviour
 {
@@ -69,8 +70,46 @@ public class InteractionHandler : MonoBehaviour
         
         DisableScene(ActiveSceneId);
         ActiveSceneId += 1;
+        Debug.Log("Switched to scene " + ActiveSceneId);
 
-        NextSceneButton.SetActive(ActiveSceneId == 3);
+        if (ActiveSceneId == 3)
+        {
+            NextSceneButton.SetActive(true);
+
+            if (MentalHealthCounter.MentalHealthPoints > 2)
+            {
+                SceneRenderer[ActiveSceneId].sprite = DarkSprites[ActiveSceneId];
+            }
+            else if (MentalHealthCounter.MentalHealthPoints > 0)
+            {
+                SceneRenderer[ActiveSceneId].sprite = NeutralSprites[ActiveSceneId];
+            }
+            else
+            {
+                SceneRenderer[ActiveSceneId].sprite = HappySprites[ActiveSceneId];
+            }
+        }
+        else if (ActiveSceneId == 8)
+        {
+            NextSceneButton.SetActive(false);
+
+            if (MentalHealthCounter.MentalHealthPoints > 7)
+            {
+                SceneRenderer[ActiveSceneId].sprite = DarkSprites[ActiveSceneId];
+            }
+            else if (MentalHealthCounter.MentalHealthPoints > 3)
+            {
+                SceneRenderer[ActiveSceneId].sprite = NeutralSprites[ActiveSceneId];
+            }
+            else
+            {
+                SceneRenderer[ActiveSceneId].sprite = HappySprites[ActiveSceneId];
+            }
+        }
+        else
+        {
+            NextSceneButton.SetActive(false);
+        }
 
         DisableScene(OverviewSceneId);
         EnableScene(ActiveSceneId);
@@ -114,11 +153,27 @@ public class InteractionHandler : MonoBehaviour
         SceneUI[ActiveSceneId].SetActive(false);
         NextSceneButton.SetActive(true);
     }
+
+    public void RestartGame()
+    {
+        Debug.Log("Hi!");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
 
 class MentalHealthCounter
 {
-    public int MentalHealthPoints { get; private set; } = 0;
+    private int points = 0;
+
+    public int MentalHealthPoints 
+    { 
+        get => points;
+        private set
+        {
+            Debug.Log("MentalHealthPoints set to " + value);
+            points = value;
+        } 
+    } 
 
     public void Reset()
     {
