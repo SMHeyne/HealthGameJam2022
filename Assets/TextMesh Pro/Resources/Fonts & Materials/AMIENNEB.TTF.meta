@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: ca31a416a2cf49f4d80055dbe733aa7e
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Amienne
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 46b63524e8e2f4845a1ca885fa548ffb, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
