@@ -9,9 +9,10 @@ We hope that the little fish in this game show that a helping hand or a gesture 
 
 
 Credits:
-
-    • Zoe-Camille Schwarz: 2D Illustrations + Concept
-    • Laura Scholzen: 2D Illustrations + Concept
-    • Bernd Höllen: 2D Illustrations + UI
-    • Dominik Viererbe: Unity Scripting Support
-    • Sabine M. Heyne: Game Design + Unity Project + UX
+• Zoe-Camille Schwarz: 2D Illustrations + Concept
+• Laura Scholzen: 2D Illustrations + Concept
+• Bernd Höllen: 2D Illustrations + UI
+• Dominik Viererbe: Unity Scripting Support
+  (https://github.com/dviererbe)
+• Sabine M. Heyne: Game Design + Unity Project + UX
+  (https://github.com/SMHeyne)
